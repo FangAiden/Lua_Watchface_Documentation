@@ -37,6 +37,18 @@ npx tauri dev
 npx tauri build
 ```
 
+## 免安装（绿色版）发布（Windows）
+
+绿色版就是**只分发单个 exe**（不生成 NSIS 安装包）：
+
+```bash
+npm run tauri:portable
+```
+
+- 可执行文件位置：`src-tauri/target/release/app.exe`
+- 你可以把 `app.exe` 重命名后直接压缩成 zip 分发
+- 说明：即使是绿色版，运行时仍可能在用户目录写入缓存/配置（取决于 Tauri/WebView2）
+
 ## 目录结构（常用）
 
 - `docs/`：文档内容（Markdown/MDX）
