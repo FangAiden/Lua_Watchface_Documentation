@@ -1,3 +1,7 @@
+---
+tags: ["module:lvgl", "type:ref", "kind:enum"]
+---
+
 # EVENT 枚举
 
 LVGL 的事件（`lv_event_t`）用于对象交互、绘制、状态变化等场景。  
@@ -52,4 +56,3 @@ LVGL 的事件（`lv_event_t`）用于对象交互、绘制、状态变化等场
 | **STYLE_CHANGED** | 45 | 样式变化（如主题或 `style_set` 更新）时触发 |
 | **LAYOUT_CHANGED** | 46 | 布局更新（如 Flex/Grid 调整）后触发 |
 | **GET_SELF_SIZE** | 47 | 请求对象自行计算理想大小（auto-size）时触发 |
-

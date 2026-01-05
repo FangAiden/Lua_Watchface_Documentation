@@ -1,3 +1,7 @@
+---
+tags: ["module:vibrator", "type:overview"]
+---
+
 # Vibrator 模块
 
 > 统一的触觉反馈（震动）接口。  

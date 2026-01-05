@@ -1,3 +1,7 @@
+---
+tags: ["module:lvgl", "type:ref", "kind:enum"]
+---
+
 # ALIGN 枚举
 
 用于对象相对于父对象或参考对象的对齐方式。  

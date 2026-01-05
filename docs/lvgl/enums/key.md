@@ -1,3 +1,7 @@
+---
+tags: ["module:lvgl", "type:ref", "kind:enum"]
+---
+
 # KEY 枚举
 
 `KEY` 枚举用于定义 **键盘输入** 或 **旋钮编码器（encoder）输入** 的按键代码。  

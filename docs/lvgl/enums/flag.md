@@ -1,3 +1,7 @@
+---
+tags: ["module:lvgl", "type:ref", "kind:enum"]
+---
+
 # FLAG 枚举
 
 对象标志（`lv_obj_flag_t`）用于控制对象的行为特性和交互方式。  

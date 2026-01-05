@@ -1,6 +1,7 @@
 ---
 title: "LVGL 概览"
 description: "LVGL 模块树结构与可用控件/枚举/子模块/全局函数"
+tags: ["module:lvgl", "type:overview"]
 ---
 
 lua + lvgl = luavgl

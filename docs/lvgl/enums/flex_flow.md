@@ -1,3 +1,7 @@
+---
+tags: ["module:lvgl", "type:ref", "kind:enum"]
+---
+
 # FLEX_FLOW 枚举
 
 `FLEX_FLOW` 用于设置 **Flex 容器的主轴方向** 和 **是否换行**。  

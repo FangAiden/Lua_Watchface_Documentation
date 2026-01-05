@@ -1,3 +1,7 @@
+---
+tags: ["module:lvgl", "type:ref", "kind:enum"]
+---
+
 # DIR 枚举
 
 `DIR`（Direction）用于描述方向标志，可用于滚动、布局、拖动、动画等场景。  

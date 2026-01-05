@@ -1,3 +1,7 @@
+---
+tags: ["module:lvgl", "type:ref", "kind:enum"]
+---
+
 # ROLLER_MODE 枚举
 
 `ROLLER_MODE` 用于设置滚轮控件（`lv_roller`）的滚动模式。  

@@ -1,8 +1,8 @@
 {
   "$schema": "../node_modules/@tauri-apps/cli/config.schema.json",
   "productName": "Xiaomi Lua应用开发文档",
-  "version": "0.1.0",
-  "identifier": "com.example.luaapp",
+  "version": "1.0.0",
+  "identifier": "com.docs.luaapp",
   "build": {
     "frontendDist": "../build",
     "devUrl": "http://localhost:3000",

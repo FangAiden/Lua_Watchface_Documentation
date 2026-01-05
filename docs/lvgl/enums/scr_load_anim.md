@@ -1,3 +1,7 @@
+---
+tags: ["module:lvgl", "type:ref", "kind:enum"]
+---
+
 # SCR_LOAD_ANIM 枚举
 
 `SCR_LOAD_ANIM` 定义了 **屏幕切换动画类型**，用于 `lv_scr_load_anim()` 函数。  

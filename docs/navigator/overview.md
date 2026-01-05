@@ -1,3 +1,7 @@
+---
+tags: ["module:navigator", "type:overview"]
+---
+
 # Navigator 模块
 
 > 页面导航与返回控制模块。  

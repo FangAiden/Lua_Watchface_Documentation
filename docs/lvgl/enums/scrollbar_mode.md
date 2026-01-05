@@ -1,3 +1,7 @@
+---
+tags: ["module:lvgl", "type:ref", "kind:enum"]
+---
+
 # SCROLLBAR_MODE 枚举
 
 `SCROLLBAR_MODE` 用于控制对象滚动条（Scrollbar）的显示和隐藏逻辑。  

@@ -43,7 +43,18 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category', label: 'Lua标准库', collapsed: true,
-      items: ['official/overview'],
+      items: [
+        'official/overview',
+        'official/stdlib/globals',
+        'official/stdlib/coroutine',
+        'official/stdlib/debug',
+        'official/stdlib/io',
+        'official/stdlib/math',
+        'official/stdlib/os',
+        'official/stdlib/package',
+        'official/stdlib/string',
+        'official/stdlib/table',
+      ],
     },
     {
       type: 'category', label: 'Topic', collapsed: true,

@@ -1,41 +1,50 @@
-# Website
+# Lua 应用开发文档（Docusaurus + Tauri）
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+本仓库是一个基于 **Docusaurus** 的文档站点，用于沉淀 Lua 应用开发过程中整理的模块接口与示例（如 `lvgl` / `dataman` / `animengine` 等）。  
+同时集成 **Tauri**，可将文档站点打包为离线桌面应用（Windows NSIS）。
 
-## Installation
+## 环境要求
 
-```bash
-yarn
-```
+- Node.js `>= 20`（见 `package.json`）
+- （可选，桌面版）Rust 工具链 + Tauri 依赖
 
-## Local Development
-
-```bash
-yarn start
-```
-
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
-
-## Build
+## 本地预览
 
 ```bash
-yarn build
+npm ci
+npm run start
 ```
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
+默认会启动开发服务器（通常为 `http://localhost:3000`）。
 
-## Deployment
-
-Using SSH:
+## 构建静态站点
 
 ```bash
-USE_SSH=true yarn deploy
+npm run build
 ```
 
-Not using SSH:
+产物输出到 `build/`。
+
+## 打包离线桌面版（可选）
+
+> 需要本机已配置 Rust/Tauri 构建环境。
 
 ```bash
-GIT_USER=<Your GitHub username> yarn deploy
+npx tauri dev
 ```
 
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+```bash
+npx tauri build
+```
+
+## 目录结构（常用）
+
+- `docs/`：文档内容（Markdown/MDX）
+- `sidebars.ts`：文档侧边栏结构
+- `docusaurus.config.ts`：站点配置（标题、主题、路由等）
+- `src-tauri/`：Tauri 应用配置与 Rust 端
+
+## 贡献文档
+
+- 新增/修改文档：在 `docs/` 下编辑，并在 `sidebars.ts` 中挂载导航
+- 建议优先阅读：`docs/intro/conventions.md`

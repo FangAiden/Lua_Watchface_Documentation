@@ -1,3 +1,7 @@
+---
+tags: ["module:lvgl", "type:ref", "kind:enum"]
+---
+
 # FLEX_ALIGN 枚举
 
 `FLEX_ALIGN` 用于定义 **Flex 布局** 中子对象的对齐方式。  

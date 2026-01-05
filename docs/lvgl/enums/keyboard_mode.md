@@ -1,3 +1,7 @@
+---
+tags: ["module:lvgl", "type:ref", "kind:enum"]
+---
+
 # KEYBOARD_MODE 枚举
 
 `KEYBOARD_MODE` 用于设置 **虚拟键盘 (`lv_keyboard`) 的输入模式**。  

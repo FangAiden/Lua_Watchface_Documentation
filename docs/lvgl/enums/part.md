@@ -1,3 +1,7 @@
+---
+tags: ["module:lvgl", "type:ref", "kind:enum"]
+---
+
 # PART 枚举
 
 `PART` 枚举定义了 LVGL 对象（Object）和控件的不同 **部件（Part）**。  

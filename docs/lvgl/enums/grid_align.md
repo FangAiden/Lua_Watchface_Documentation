@@ -1,3 +1,7 @@
+---
+tags: ["module:lvgl", "type:ref", "kind:enum"]
+---
+
 # GRID_ALIGN 枚举
 
 `GRID_ALIGN` 用于定义 **Grid（网格布局）** 中子对象在单元格或整体网格中的对齐方式。  

@@ -1,3 +1,7 @@
+---
+tags: ["module:lvgl", "type:ref", "kind:enum"]
+---
+
 # STATE 枚举
 
 `STATE` 枚举定义了 LVGL 对象的交互与视觉状态。  
