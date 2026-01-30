@@ -2,20 +2,13 @@
 tags: ["module:lvgl", "type:ref", "kind:enum"]
 ---
 
-# FLEX_ALIGN 枚举
-
-`FLEX_ALIGN` 用于定义 **Flex 布局** 中子对象的对齐方式。  
-该枚举在 `lv_flex_t` 容器中使用，控制子项在主轴（main axis）或交叉轴（cross axis）上的分布与对齐。
-
----
-
-## 枚举表
+# FLEX_ALIGN
 
 | 常量 | 值 | 说明 |
 |------|----|------|
-| **START** | 0 | 子对象从起始位置开始对齐（默认） |
-| **END** | 1 | 子对象从末尾位置开始对齐 |
-| **CENTER** | 2 | 子对象在中间对齐 |
-| **SPACE_EVENLY** | 3 | 子对象之间和两端的间距均相等 |
-| **SPACE_AROUND** | 4 | 子对象之间间距相等，首尾间距为其一半 |
-| **SPACE_BETWEEN** | 5 | 子对象均匀分布，首尾紧贴边界 |
+| **START** | 0 | 从起始位置对齐 |
+| **END** | 1 | 从末尾位置对齐 |
+| **CENTER** | 2 | 居中对齐 |
+| **SPACE_EVENLY** | 3 | 间距均等（含两端） |
+| **SPACE_AROUND** | 4 | 间距均等，首尾为一半 |
+| **SPACE_BETWEEN** | 5 | 均匀分布，首尾紧贴边界 |

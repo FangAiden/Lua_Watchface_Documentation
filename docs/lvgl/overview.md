@@ -4,14 +4,30 @@ description: "LVGL 模块树结构与可用控件/枚举/子模块/全局函数"
 tags: ["module:lvgl", "type:overview"]
 ---
 
-lua + lvgl = luavgl
+# LVGL 概览
 
-`luavgl` 是围绕 lvgl **核心** 函数和 **组件** 的封装，考虑了类继承，这是 lvgl 在 `C` 中试图实现的，而 Lua 使组件继承变得更加流畅。
+`luavgl` 是对 LVGL 核心函数和组件的 Lua 封装。
 
-`luavgl` 不支持低级硬件初始化、lvgl 设置等 API。这些初始化必须在执行 lua 脚本之前完成。
+:::caution 注意
+- 在实机上测试未知特性时，请在按钮回调中触发测试代码，避免程序启动时直接运行导致 Panic 循环重启。
+:::
 
-本文档内容主要通过 `luavgl` 开源项目和 `Vela 5` 镜像分析得来，不保证在实机上所有特性完整，请自行尝试。
+## 可用控件 ✅
 
-# 注意
-- 在实机上尝试文档未知可用的特性时，请在按钮中触发你的测试代码，不要程序进入时就运行测试代码，会导致实机Panic进入循环重启状态！
-- 在 `Vela 5` 镜像中存在的特性，在实机环境中可能并不存在，请自行测试。
+| 控件 | 说明 |
+|------|------|
+| **Object** | 基类对象（47 个方法） |
+| **Label** | 文本标签 |
+| **Image** | 图片（支持 `.bin` 格式） |
+| **Checkbox** | 复选框 |
+| **Dropdown** | 下拉选择 |
+| **Roller** | 滚轮选择 |
+| **Textarea** | 文本输入 |
+| **Led** | LED 指示灯 |
+| **Calendar** | 日历 |
+| **List** | 列表 |
+| **Keyboard** | 键盘 |
+
+## 不可用控件 ❌
+
+Arc, Bar, Slider, Switch, Spinner, Meter, Chart, Line, Btnmatrix, Table, Pointer, AnalogTime, Analogclock, Tabview — 均未注册，调用返回 `nil`。

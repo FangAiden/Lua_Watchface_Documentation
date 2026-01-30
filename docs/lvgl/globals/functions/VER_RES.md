@@ -1,14 +1,7 @@
 ---
 title: "VER_RES"
-description: "获取当前显示设备的垂直分辨率（像素高度）"
+description: "垂直分辨率常量"
 tags: ["module:lvgl", "type:ref", "kind:function"]
----
-
-## 概述
-
-`VER_RES` 是用于获取 **当前显示设备垂直分辨率** 的全局常量。  
-在 LuaVGL 中，该值通常以像素为单位返回屏幕的高度，用于计算对象的纵向布局、滚动区域范围以及适配不同分辨率设备。
-
 ---
 
 ## 定义
@@ -17,9 +10,10 @@ tags: ["module:lvgl", "type:ref", "kind:function"]
 VER_RES : integer
 ```
 
+当前显示设备的垂直分辨率（像素）。
+
 ## 示例
 
 ```lua
-local ver_res = lvgl.VER_RES
-print("当前垂直分辨率:", ver_res)
+local h = lvgl.VER_RES
 ```

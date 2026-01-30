@@ -75,10 +75,10 @@
     "Checkbox": { "methods": ["get_text", "set"], "inherit_from": "Object" }
   },
   "modules": {
-    "disp": { "methods": ["get_default", "get_next", "get_scr_act", "get_scr_prev", "load_scr"] },
+    "disp": { "methods": ["get_default", "get_next", "get_scr_act", "get_scr_prev", "load_scr", "get_layer_top", "get_layer_sys", "get_res", "set_rotation", "set_bg_opa", "set_bg_color", "set_bg_image", "get_chroma_key_color"] },
     "fs": { "methods": ["open_dir", "open_file"] },
-    "group": { "methods": ["create", "focus_obj", "get_default", "remove_obj", "remove_objs"] },
-    "indev": { "methods": ["get_act", "get_next", "get_obj_act"] }
+    "group": { "methods": ["create", "focus_obj", "get_default", "remove_obj", "remove_objs", "delete", "set_default", "add_obj", "focus_next", "focus_prev", "focus_freeze", "send_data", "set_editing", "set_wrap", "get_wrap", "get_obj_count", "get_focused", "set_focus_cb", "get_focus_cb", "set_edge_cb", "get_edge_cb"] },
+    "indev": { "methods": ["get_act", "get_next", "get_obj_act", "get_type", "reset", "reset_long_press", "set_cursor", "set_group", "get_point", "get_gesture_dir", "get_key", "get_scroll_dir", "get_scroll_obj", "get_vect", "wait_release", "on_event"] }
   },
   "globals": {
     "functions": ["HOR_RES", "VER_RES", "PCT", "OPA", "Font", "Style", "Timer", "Anim"],
@@ -159,6 +159,7 @@
       "SCROLL_ONE": 128,
       "SCROLL_CHAIN_HOR": 256,
       "SCROLL_CHAIN_VER": 512,
+      "SCROLL_CHAIN": 768,
       "SCROLL_ON_FOCUS": 1024,
       "SCROLL_WITH_ARROW": 2048,
       "SNAPPABLE": 4096,
@@ -215,9 +216,11 @@
       "CHILD_CHANGED": 37,
       "CHILD_CREATED": 38,
       "CHILD_DELETED": 39,
+      "SCREEN_UNLOAD_START": 40,
       "SCREEN_LOAD_START": 41,
       "SCREEN_LOADED": 42,
       "SCREEN_UNLOADED": 43,
+      "SIZE_CHANGED": 44,
       "STYLE_CHANGED": 45,
       "LAYOUT_CHANGED": 46,
       "GET_SELF_SIZE": 47

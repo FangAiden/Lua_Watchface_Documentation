@@ -4,26 +4,44 @@ tags: ["type:intro", "type:overview"]
 
 # 概览
 
-本项目的 Lua 脚本体系由多个功能模块组成，覆盖 **UI 控件、动画系统、数据订阅、页面状态管理** 等核心功能。  
-每个模块均有独立的文档，描述其接口、示例与使用建议。
+## 设备环境
 
----
+| 项目 | 值 |
+|------|------|
+| 操作系统 | NuttX 12.3.0 (Xiaomi Vela) |
+| Lua 版本 | 5.4.0 |
+| 分辨率 | 466 × 466（圆形） |
+| 验证平台 | Vela 手表模拟器 |
 
-## 当前模块
+## Lua 模块
 
-- **lvgl**：图形界面模块，封装 LVGL 控件系统，包括 Object、Label、List、Dropdown 等控件及全局函数。  
-- **math**：标准数学库，提供常用的三角函数、取整、随机数等计算。  
-- **topic**：主题消息模块，用于跨模块事件分发与订阅。  
-- **dataman**：数据管理模块，负责设备与 UI 数据流的订阅、更新与暂停控制。  
-- **activity**：活动页面状态模块，用于检测应用显示状态（如表盘编辑模式）、控制生命周期。  
-- **animengine**：动画引擎模块，用于创建、启动、移除动画，支持模板化配置。
-- **navigator**：页面导航与返回控制模块，用于统一处理返回/关闭逻辑。
-- **vibrator**：触觉反馈模块，提供统一的震动模式接口。
-- **screen**：屏幕相关模块（当前可用信息较少，文档以“如何探测/补全”为主）。
+| 模块 | 说明 | 状态 |
+|------|------|------|
+| **lvgl** | UI 控件系统（11 个控件 + disp/fs/group/indev 子模块） | ✅ |
+| **dataman** | 数据订阅（subscribe/pause/resume） | ✅ |
+| **topic** | 消息订阅（subscribe → unsubscribe/frequency） | ✅ |
+| **activity** | 页面状态管理（isShown） | ✅ |
+| **animengine** | 属性动画引擎（x/y/rotate/opacity/scale） | ✅ |
+| **navigator** | 页面导航（finish） | ✅ |
+| **vibrator** | 触觉反馈（start/cancel + 15 种模式） | ✅ |
+| **screen** | 屏幕控制 | ❌ 空表 |
 
----
+## Lua 标准库
 
-## 下一步
+| 模块 | 状态 | 备注 |
+|------|------|------|
+| `io` | ✅ | `io.open` 读写可用，`io.popen` 不可用 |
+| `os` | ✅ | `os.execute` 可用，`os.time`/`os.date`/`os.clock` 可用 |
+| `debug` | ✅ | `getregistry`/`getinfo`/`traceback` 等完整可用 |
+| `math` | ✅ | 完整 |
+| `string` | ✅ | 完整 |
+| `table` | ✅ | 完整 |
+| `coroutine` | ✅ | 完整 |
+| `utf8` | ✅ | 完整 |
+| `package` | ✅ | `require`/`loadfile`/`dofile` 均可用 |
 
-- [快速开始](./getting-started.md)
-- [文档约定（务必先看）](./conventions.md)
+## 系统命令
+
+通过 `os.execute()` 可调用 shell 命令。详见 [NuttX Shell 参考](../shell/overview)。
+
+> `io.popen` 不可用。需要捕获命令输出时，用 `os.execute("cmd > /tmp/out.txt")` 后 `io.open("/tmp/out.txt")` 读取。

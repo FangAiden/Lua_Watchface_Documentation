@@ -4,21 +4,42 @@ description: "LVGL 内置字体"
 tags: ["module:lvgl", "type:ref", "kind:globals"]
 ---
 
-LVGL 提供了一组内置字体（`BUILTIN_FONT`），可直接使用而无需加载外部字体文件。  
-这些字体基于 **Montserrat** 字体族，涵盖从小号到大号的多种字号，适合不同 UI 元素。
+# 内置字体
 
----
+## 预编译字体常量
 
-## 枚举表
+| 值 | 说明 |
+|----|------|
+| **DEFAULT** | 默认字体（通常等价于 MONTSERRAT_14） |
+| **MONTSERRAT_12** | 12px |
+| **MONTSERRAT_12_SUBPX** | 12px 次像素渲染 |
+| **MONTSERRAT_14** | 14px（默认） |
+| **MONTSERRAT_16** | 16px |
+| **MONTSERRAT_18** | 18px |
+| **MONTSERRAT_22** | 22px |
+| **MONTSERRAT_24** | 24px |
+| **MONTSERRAT_32** | 32px |
 
-| 值（字符串） | 说明 |
+## `lvgl.Font()` 验证结果 ✅
+
+已验证可用组合（`lvgl.Font(name, size, weight)`）：
+
+| 字体 | 可用尺寸 |
+|------|----------|
+| `montserrat` | 14, 16, 18, 24, 32 |
+
+> `weight` 仅 `"normal"` 有效，可省略。
+
+## 设备 TTF 字体
+
+设备 `/font/` 目录下的 TTF 文件（⚠️ 未验证是否可通过 `lvgl.Font` 加载）：
+
+| 文件 | 说明 |
 |------|------|
-| **DEFAULT** | 默认字体（通常等价于 `MONTSERRAT_14`） |
-| **MONTSERRAT_12** | 12 px 大小字体，适合小标签或紧凑 UI |
-| **MONTSERRAT_12_SUBPX** | 12 px 次像素渲染版本（更平滑的边缘） |
-| **MONTSERRAT_14** | 14 px 字体，常用于一般文本（默认） |
-| **MONTSERRAT_16** | 16 px 字体，适合中等标题或主要标签 |
-| **MONTSERRAT_18** | 18 px 字体，适合按钮或强调文字 |
-| **MONTSERRAT_22** | 22 px 字体，适合二级标题 |
-| **MONTSERRAT_24** | 24 px 字体，适合大标题或重要数值 |
-| **MONTSERRAT_32** | 32 px 字体，适合主标题或仪表盘读数 |
+| `MiSans-Regular.ttf` | 小米兰亭 Regular |
+| `MiSans-Medium.ttf` | 小米兰亭 Medium |
+| `MiSans-Semibold.ttf` | 小米兰亭 Semibold |
+| `MiSans-Demibold.ttf` | 小米兰亭 Demibold |
+| `MiSansF-Medium.ttf` | 小米兰亭 F Medium |
+| `MiSansF-Semibold.ttf` | 小米兰亭 F Semibold |
+| `MiSansF-Demibold.ttf` | 小米兰亭 F Demibold |
