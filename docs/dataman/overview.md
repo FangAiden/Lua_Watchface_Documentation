@@ -47,5 +47,11 @@ dataman.resume(token)
 | `weatherCurrentSunRiseMinute` | 日出分 | 0–59，INT_MAX 无效 |
 | `weatherCurrentSunSetHour` | 日落时 | 0–23，INT_MAX 无效 |
 | `weatherCurrentSunSetMinute` | 日落分 | 0–59，INT_MAX 无效 |
+| `batteryLevel` | AOD/表盘绑定（观察到） | 未知 |
+| `calorie` | AOD/表盘绑定（观察到） | 未知 |
+| `heartRate` | AOD/表盘绑定（观察到） | 未知 |
+| `step` | AOD/表盘绑定（观察到） | 未知 |
+| `weatherCondition` | AOD/表盘绑定（观察到） | 未知 |
 
+> 说明：标记为“观察到”的键来自设备表盘/AOD 资源绑定，尚未通过 `dataman.subscribe` 验证。
 > 键名规则为驼峰式：`healthXxx`、`weatherXxx`、`timeXxx`、`systemXxx`。

@@ -7,6 +7,9 @@
 # Generated files
 .docusaurus
 .cache-loader
+.tmp_device
+.claude
+.infcode
 
 # Misc
 .DS_Store
