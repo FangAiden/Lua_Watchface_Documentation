@@ -47,7 +47,7 @@ anim:start()
 | `config.duration` | `number` | 持续时间（秒，float） |
 | `config.delay` | `number` | 延迟时间（秒，float） |
 | `config.easing` | `string` | 缓动函数 |
-| `config.interations` | `string` | 循环次数（注意拼写） |
+| `config.iterations` | `string` | 循环次数 |
 
 ### easing 缓动函数
 
@@ -59,7 +59,7 @@ anim:start()
 | `"ease_in_out"` | 缓入缓出 |
 | `"spring"` | 弹性 |
 
-### interations 循环次数
+### iterations 循环次数
 
 | 值 | 说明 |
 |----|------|
@@ -82,12 +82,16 @@ JSON 必须是单行或正确格式化的字符串。包含字面换行符的多
 ```lua
 local tpl = [[
     {
-        "fromState": { "rotate": %d },
-        "toState": { "rotate": %d },
-        "config": { "duration": %f, "interations": "1" }
+        "fromState": {
+            "rotate": { "value": 0, "ease": ["linear", 5.0] }
+        },
+        "toState": {
+            "rotate": { "value": 3600, "delay": 0, "duration": %d, "ease": ["linear", 5.0] }
+        },
+        "config": { "ease": ["linear", 5.0], "iterations": "1" }
     }
 ]]
-local anim = animengine.create(obj, string.format(tpl, 0, 360, 0.1))
+local anim = animengine.create(obj, string.format(tpl, 1000))
 anim:start()
 ```
 
@@ -96,12 +100,18 @@ anim:start()
 ```lua
 local tpl = [[
     {
-        "fromState": { "x": 0, "y": 0 },
-        "toState": { "x": 100, "y": 50 },
-        "config": { "duration": 1.0, "easing": "ease_in_out", "delay": 0.5 }
+        "fromState": {
+            "x": { "value": 0, "ease": ["ease_in_out", 5.0] },
+            "y": { "value": 0, "ease": ["ease_in_out", 5.0] }
+        },
+        "toState": {
+            "x": { "value": 100, "delay": 500, "duration": 1000, "ease": ["ease_in_out", 5.0] },
+            "y": { "value": 50, "delay": 500, "duration": 1000, "ease": ["ease_in_out", 5.0] }
+        },
+        "config": { "ease": ["ease_in_out", 5.0], "iterations": "1" }
     }
 ]]
-local anim = animengine.create(obj, string.format(tpl))
+local anim = animengine.create(obj, tpl)
 anim:start()
 ```
 
